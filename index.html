@@ -52,6 +52,14 @@
   ol.steps li::before{content:counter(s);position:absolute;left:0;top:10px;width:30px;height:30px;
      border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--ink);
      font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .freecut{background:var(--green-bg);border:1px solid #bbf7d0;border-radius:12px;
+           padding:24px 26px;margin-bottom:20px;display:flex;flex-wrap:wrap;gap:18px;
+           align-items:center;justify-content:space-between}
+  .freecut .fc-txt{flex:1;min-width:280px}
+  .freecut h3{font-size:18px;margin-bottom:6px;color:var(--green-ink)}
+  .freecut p{font-size:14.5px;color:var(--soft)}
+  .freecut .fc-buy{text-align:center;min-width:170px}
+  .freecut .fc-buy .price{font-size:30px;font-weight:800;color:var(--green-ink);margin-bottom:10px}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
   .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 24px;
         display:flex;flex-direction:column}
@@ -68,6 +76,11 @@
   .founding code{background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:1px 7px;
                  font-size:13px;font-weight:600}
   .refund{margin-top:10px;text-align:center;font-size:13.5px;color:var(--soft)}
+  .customstrip{margin-top:24px;background:var(--card);border:1px solid var(--line);border-radius:12px;
+               padding:24px 26px}
+  .customstrip h3{font-size:17px;margin-bottom:10px}
+  .customstrip .tiers{display:flex;flex-wrap:wrap;gap:10px 28px;margin-bottom:12px;font-size:14.5px;color:var(--soft)}
+  .customstrip .tiers b{color:var(--ink)}
   details{background:var(--card);border:1px solid var(--line);border-radius:10px;
           padding:16px 20px;margin-bottom:10px}
   summary{font-weight:600;cursor:pointer;font-size:15.5px}
@@ -90,12 +103,12 @@
 <main>
   <div class="hero wrap">
     <h1>Every new BC business.<br>Every Monday.</h1>
-    <p class="sub">A verified weekly feed of new incorporations and freshly licensed businesses — in your inbox as CSV + PDF, before they've chosen their vendors.</p>
+    <p class="sub">A verified weekly feed of new incorporations and freshly licensed businesses — names, registry identity, and every contact we can source, each with a published URL on every field.</p>
     <div class="ctas">
-      <a class="btn btn-primary" href="https://bcbizradar.gumroad.com">Subscribe</a>
+      <a class="btn btn-primary" href="mailto:feed@bcbizradar.com?subject=My%20free%20BC%20new-business%20cut&body=One%20vertical%3A%20%0AOne%20city%3A%20">Get your free cut</a>
       <a class="btn btn-ghost" href="demo-issue.pdf">See a real issue (PDF)</a>
     </div>
-    <p class="trust"><b>953 rows</b> last week · verified against <b>OrgBook BC</b> · a published source URL on <b>every contact</b></p>
+    <p class="trust"><b>951 new businesses</b> last week · verified against <b>OrgBook BC</b> · a published source URL on <b>every contact</b></p>
   </div>
 
   <section class="wrap">
@@ -135,34 +148,56 @@
     </ol>
   </section>
 
-  <section class="wrap">
+  <section class="wrap" id="pricing">
     <h2>Pricing</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Trades &amp; Construction</h3>
-        <div class="price">$129 <small>CAD/mo</small></div>
-        <div class="usd">billed as US$95 at checkout</div>
-        <p>Every new BC contractor — 78 last week — plus newly licensed Vancouver trades with street addresses. Built for insurance brokers and suppliers.</p>
-        <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/trades">Subscribe</a>
+
+    <div class="freecut">
+      <div class="fc-txt">
+        <h3>Start with a free cut</h3>
+        <p>Tell us <b>one vertical and one city</b>. We send this week's brand-new BC businesses in that exact slice — names, registry identity, and every contact we can source with a URL on each field. Free, once. Targeted cuts run dense (a recent Surrey construction cut was 9 of 12 reachable).</p>
       </div>
-      <div class="card feat">
-        <div class="tag">Most complete</div>
-        <h3>All New BC Incorporations</h3>
-        <div class="price">$149 <small>CAD/mo</small></div>
-        <div class="usd">billed as US$109 at checkout</div>
-        <p>Every named new BC business — 869 last week — classified into 10 verticals. Built for bookkeepers, CPAs, payroll and banking.</p>
-        <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/allbc">Subscribe</a>
-      </div>
-      <div class="card">
-        <h3>Custom list</h3>
-        <div class="price">from $149 <small>CAD, one-off</small></div>
-        <div class="usd">from US$109 · delivered within 48 hours</div>
-        <p>Your vertical, your territory, your time window. Full source-URL audit trail. The price credits toward your first subscription month.</p>
-        <a class="btn btn-ghost" href="mailto:feed@bcbizradar.com?subject=Custom%20list%20request">Email the spec</a>
+      <div class="fc-buy">
+        <div class="price">$0</div>
+        <a class="btn btn-primary" href="mailto:feed@bcbizradar.com?subject=My%20free%20BC%20new-business%20cut&body=One%20vertical%3A%20%0AOne%20city%3A%20">Request your free cut</a>
       </div>
     </div>
-    <div class="founding">First 5 subscribers per feed lock <b>$79 CAD/mo for life</b> (US$58) — code <code>FOUNDING-TRADES</code> or <code>FOUNDING-ALLBC</code> at checkout, in exchange for a testimonial after month one.</div>
+
+    <div class="cards">
+      <div class="card feat">
+        <div class="tag">Start here</div>
+        <h3>New-Incorp Names — CPA / Bookkeeper</h3>
+        <div class="price">$29 <small>CAD/mo</small></div>
+        <div class="usd">billed as US$21 at checkout</div>
+        <p>Every named new BC incorporation each week — 869 last week — with registry identity (OrgBook status + business number). A names feed: reach new corps before they pick an accountant. Cancel any time.</p>
+        <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/cpa">Subscribe</a>
+      </div>
+      <div class="card">
+        <h3>Trades &amp; Construction</h3>
+        <div class="price">$99 <small>CAD/mo</small></div>
+        <div class="usd">billed as US$73 at checkout</div>
+        <p>Every new BC contractor — 78 last week — plus newly licensed Vancouver trades with street addresses. The dense slice, built for insurance brokers and suppliers.</p>
+        <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/trades">Subscribe</a>
+      </div>
+      <div class="card">
+        <h3>All New BC Incorporations</h3>
+        <div class="price">$49 <small>CAD/mo</small></div>
+        <div class="usd">billed as US$36 at checkout</div>
+        <p>Every named new BC business — 951 last week — across 11 verticals. The broadest, earliest signal, sold as names + registry identity, not a contact list. Cancel any time.</p>
+        <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/allbc">Subscribe</a>
+      </div>
+    </div>
+    <div class="founding">First 5 <b>Trades</b> subscribers lock <b>$79 CAD/mo for life</b> (US$58) — code <code>FOUNDING-TRADES</code> at checkout, in exchange for a testimonial after month one.</div>
     <p class="refund">First issue not useful? Full refund of the first month, no questions.</p>
+
+    <div class="customstrip">
+      <h3>Need a contact-ready slice now? Custom list build</h3>
+      <div class="tiers">
+        <span><b>$149</b> Snapshot — one vertical × one region × 30 days</span>
+        <span><b>$299</b> Deep slice — multi-vertical, up to 90 days, deeper enrichment</span>
+        <span><b>$499</b> Bespoke — exact spec, cross-referencing, analyst notes per row</span>
+      </div>
+      <p class="cap">Delivered within 48 hours with a full source-URL audit trail per field. Targeted cuts run dense — this is where the enrichment pays off. The price credits toward your first subscription month. <a href="mailto:feed@bcbizradar.com?subject=Custom%20list%20request">Email the spec</a>.</p>
+    </div>
   </section>
 
   <section class="wrap">
@@ -177,11 +212,11 @@
     </details>
     <details>
       <summary>Why are some rows missing contact info?</summary>
-      <p>Because the company is days old and hasn't published any yet. That's the point — reach them at formation, or wait for our re-scan to append contacts as they appear. Vendors showing 100% email coverage on day-0 incorporations are selling guesses.</p>
+      <p>Because the company is days old and hasn't published any yet. That's the point — reach them at formation, or wait for our re-scan to append contacts as they appear. Vendors showing 100% email coverage on day-0 incorporations are selling guesses. Across the full weekly feed roughly 6% are reachable on day one; targeted niche cuts run far denser.</p>
     </details>
     <details>
       <summary>Can I get just my city or niche? How do I cancel?</summary>
-      <p>Yes — that's the custom list build, and subscription slices can be scoped on request. Cancelling is one click, any time, effective end of the billing period. No contracts.</p>
+      <p>Yes — start with a free cut (one vertical, one city), or order a custom list build for a full contact-ready slice. Subscription slices can be scoped on request. Cancelling is one click, any time, effective end of the billing period. No contracts.</p>
     </details>
   </section>
 </main>
