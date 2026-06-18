@@ -89,6 +89,17 @@
   .customstrip .tiers b{color:var(--ink)}
   .customstrip .cap{margin-top:0}
   .customstrip .btn{margin-top:var(--s4)}
+  .grandslam{margin-bottom:var(--s6);background:var(--card);border:2px solid var(--blue);border-radius:12px;padding:var(--s6)}
+  .gs-tag{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--blue);text-transform:uppercase;letter-spacing:.06em;padding:4px 11px;border-radius:99px;margin-bottom:var(--s4)}
+  .grandslam h3{font-size:clamp(18px,2.4vw,22px);letter-spacing:-.01em;line-height:1.25;margin-bottom:var(--s5)}
+  .gs-stack{list-style:none;display:flex;flex-direction:column;gap:var(--s3);margin-bottom:var(--s5)}
+  .gs-stack li{font-size:14.5px;color:var(--soft);padding-left:28px;position:relative}
+  .gs-stack li b{color:var(--ink)}
+  .gs-stack li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--blue);font-weight:700}
+  .gs-was{text-decoration:line-through}
+  .gs-guarantee{font-size:14px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:var(--s4);margin-bottom:var(--s5)}
+  .gs-ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin-bottom:var(--s4)}
+  .gs-scar{font-size:13px;color:var(--amber-ink);font-weight:600}
   details{background:var(--card);border:1px solid var(--line);border-radius:10px;
           padding:var(--s4) var(--s5);margin-bottom:var(--s3)}
   summary{font-weight:600;cursor:pointer;font-size:15.5px}
@@ -108,6 +119,9 @@
     th,td{padding:11px 12px}
     .ctas{gap:var(--s2)}
     .ctas .btn{flex:1 1 auto;text-align:center}
+    .grandslam{padding:var(--s5)}
+    .gs-ctas{flex-direction:column}
+    .gs-ctas .btn{width:100%;text-align:center}
   }
 </style>
 </head>
@@ -171,6 +185,24 @@
   <section class="wrap" id="pricing">
     <h2>Pricing</h2>
 
+    <div class="grandslam">
+      <div class="gs-tag">Founding Partner Offer · first 5 per segment</div>
+      <h3>Be the first call every new BC business in your trade makes.</h3>
+      <ul class="gs-stack">
+        <li><b>The weekly feed.</b> Every new BC business in your niche, named and OrgBook-verified, the week it registers.</li>
+        <li><b>A done-for-you starter cut</b> in your exact niche and city, contact-ready, within the hour. <span class="gs-was">normally $149</span>, free.</li>
+        <li><b>CASL-ready first-contact templates</b> so you can act on day one. Free.</li>
+        <li><b>Rolling contact enrichment.</b> We append a contact to your day-0 rows the moment one is published. Included.</li>
+        <li><b>Your rate locked for life</b> for a short testimonial after month one.</li>
+      </ul>
+      <p class="gs-guarantee">Start with the free cut. If it does not show you real new clients, walk away. Subscribe, and if your first month is not worth more than it costs, you get a full refund and keep every list we sent.</p>
+      <div class="gs-ctas">
+        <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/trades">Claim a Trades seat, $79 (code FOUNDING-TRADES)</a>
+        <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/cpa">Claim a CPA seat, $29</a>
+      </div>
+      <p class="gs-scar">Only 5 seats per segment. Founding rate closes June 30.</p>
+    </div>
+
     <div class="freecut">
       <div class="fc-txt">
         <h3>Start with a free cut</h3>
@@ -206,8 +238,7 @@
         <a class="btn btn-primary" href="https://bcbizradar.gumroad.com/l/allbc">Subscribe</a>
       </div>
     </div>
-    <div class="founding">First 5 <b>Trades</b> subscribers lock <b>$79 CAD/mo for life</b> (US$58) — code <code>FOUNDING-TRADES</code> at checkout, in exchange for a testimonial after month one.</div>
-    <p class="refund">First issue not useful? Full refund of the first month, no questions.</p>
+    <p class="refund">First issue not useful? Full refund of the first month, no questions, and you keep every list we sent.</p>
 
     <div class="customstrip">
       <h3>Need a contact-ready slice now? Custom list build</h3>
